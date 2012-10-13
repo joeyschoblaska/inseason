@@ -1,9 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    commonjs (0.2.6)
     daemons (1.1.9)
     eventmachine (1.0.0)
     haml (3.1.7)
+    less (2.2.2)
+      commonjs (~> 0.2.6)
+    libv8 (3.3.10.4)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -11,6 +15,8 @@ GEM
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
       tilt (~> 1.3, >= 1.3.3)
+    therubyracer (0.10.2)
+      libv8 (~> 3.3.10)
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -22,5 +28,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  less
   sinatra
+  therubyracer
   thin
