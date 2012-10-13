@@ -5,3 +5,7 @@ gem 'less'
 gem 'sinatra'
 gem 'therubyracer'
 gem 'thin'
+
+group :development do
+  gem 'shotgun'
+end
