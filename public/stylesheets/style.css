@@ -4879,3 +4879,24 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+table {
+  width: 100%;
+}
+table td.name {
+  width: 25%;
+  text-align: right;
+  padding-right: 10px;
+}
+table td.bar {
+  width: 75%;
+  position: relative;
+}
+img.current-line {
+  height: 100%;
+  width: 1px;
+  position: absolute;
+  left: 50%;
+}
+.progress {
+  margin: 10px 0;
+}

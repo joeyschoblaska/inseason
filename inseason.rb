@@ -1,5 +1,5 @@
 class InSeason < Sinatra::Base
   get '/' do
-    haml :index
+    haml :index, :format => :html5
   end
 end

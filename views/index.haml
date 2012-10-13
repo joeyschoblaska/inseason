@@ -3,4 +3,20 @@
   %head
     %link{:rel => 'stylesheet', :href => '/stylesheets/style.css', :type => 'text/css'}
   %body
-    %p hi
+    .container
+      %table
+        %tbody
+          %tr
+            %td.name
+              Tomatoes
+            %td.bar{:style => 'position: relative'}
+              %img.current-line{:src => 'images/current-pixel.png'}
+              .progress
+                .bar.bar-success{:style => "width: 40%;margin-left: 10%"}
+          %tr
+            %td.name
+              Apples
+            %td.bar
+              %img.current-line{:src => 'images/current-pixel.png'}
+              .progress
+                .bar.bar-success{:style => "width: 60%;margin-left: 20%"}
