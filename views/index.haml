@@ -14,7 +14,7 @@
             %td.bar{:style => 'position: relative'}
               %img.current-line{:src => 'images/current-pixel.png'}
               .season-bar
-                %img.month-bars{:src => 'images/month-bars.png'}
+                = month_bars
                 .season-bar-inner{:style => "width: 40%;margin-left: 10%"}
           %tr
             %td.name
@@ -22,5 +22,5 @@
             %td.bar
               %img.current-line{:src => 'images/current-pixel.png'}
               .season-bar
-                %img.month-bars{:src => 'images/month-bars.png'}
+                = month_bars
                 .season-bar-inner{:style => "width: 60%;margin-left: 20%"}
