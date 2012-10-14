@@ -4881,19 +4881,20 @@ a.badge:hover {
 }
 body {
   background: url('/images/bg.png');
+  color: #42290c;
 }
 table {
   width: 100%;
 }
 table td.name {
-  width: 25%;
   text-align: right;
   padding-right: 10px;
   font-weight: bold;
   color: #775228;
+  text-transform: uppercase;
 }
 table td.bar {
-  width: 75%;
+  width: 705px;
   position: relative;
 }
 img.current-line {
@@ -4939,4 +4940,7 @@ img.month-bars {
   -moz-background-size: 40px 40px;
   -o-background-size: 40px 40px;
   background-size: 40px 40px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
