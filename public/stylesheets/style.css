@@ -4884,9 +4884,10 @@ body {
   color: #42290c;
 }
 table {
-  width: 100%;
+  margin: 0 auto;
 }
 table td.name {
+  width: 230px;
   text-align: right;
   padding-right: 10px;
   font-weight: bold;
@@ -4894,14 +4895,14 @@ table td.name {
   text-transform: uppercase;
 }
 table td.bar {
-  width: 705px;
+  width: 730px;
   position: relative;
 }
 img.current-line {
   height: 100%;
   width: 1px;
   position: absolute;
-  left: 50%;
+  left: 250px;
   z-index: 100;
 }
 img.month-bars {
@@ -4911,6 +4912,7 @@ img.month-bars {
   top: 4px;
 }
 .season-bar {
+  width: 500px;
   margin: 10px 0;
   overflow: hidden;
   position: relative;
