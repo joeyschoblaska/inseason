@@ -5,37 +5,35 @@ class InSeason
     end
 
     def self.parse_season(season)
-      periods = { #[day of the year on which period begins, duration in days]
-        'january' => [1, 31],
-        'february' => [32, 28],
-        'march' => [60, 31],
-        'april' => [91, 30],
-        'may' => [121, 31],
-        'june' => [152, 30],
-        'july' => [182, 31],
-        'august' => [213, 31],
-        'september' => [244, 30],
-        'october' => [274, 31],
-        'november' => [305, 30],
-        'december' => [335, 31],
-        'winter' => [356, 88],
-        'spring' => [79, 93],
-        'summer' => [172, 93],
-        'fall' => [265, 91],
-        'autumn' => [265, 91]
+      periods = {
+        'january' =>   {:start => 1,   :duration => 31},
+        'february' =>  {:start => 32,  :duration => 28},
+        'march' =>     {:start => 60,  :duration => 31},
+        'april' =>     {:start => 91,  :duration => 30},
+        'may' =>       {:start => 121, :duration => 31},
+        'june' =>      {:start => 152, :duration => 30},
+        'july' =>      {:start => 182, :duration => 31},
+        'august' =>    {:start => 213, :duration => 31},
+        'september' => {:start => 244, :duration => 30},
+        'october' =>   {:start => 274, :duration => 31},
+        'november' =>  {:start => 305, :duration => 30},
+        'december' =>  {:start => 335, :duration => 31},
+        'winter' =>    {:start => 356, :duration => 88},
+        'spring' =>    {:start => 79,  :duration => 93},
+        'summer' =>    {:start => 172, :duration => 93},
+        'fall' =>      {:start => 265, :duration => 91},
+        'autumn' =>    {:start => 265, :duration => 91}
       }
 
-      if season.split(/ /).size == 1 && periods.keys.include?(season)
-        return periods[season]
-      elsif season.split(/ /).size == 3
-        period1, extent, period2 = season.split(/ /)
-        period1 = periods[period1]
-        period2 = periods[period2]
+      return [periods[season][:start], periods[season][:duration]] if season.split(/ /).size == 1
 
-        case extent
-        when 'through', 'and'
-          return[period1[0], period2[0] + period2[1] - period1[0]]
-        end
+      p1, extent, p2 = season.split(/ /)
+      p1, p2 = periods[p1], periods[p2]
+      p2[:start] += 365 if p2[:start] < p1[:start]
+
+      case extent
+      when 'through', 'and'
+        return[p1[:start], p2[:start] + p2[:duration] - p1[:start]]
       end
 
       raise "Could not parse season: #{season}"
