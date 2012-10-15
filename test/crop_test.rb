@@ -20,4 +20,10 @@ class CropTest < Test::Unit::TestCase
   def test_parse_season_one_season_through_second
     assert_equal InSeason::Crop.parse_season('spring through summer'), [79, 186]
   end
+
+  def test_mid_months
+    assert_equal InSeason::Crop.parse_season('mid-february through march'), [46, 45]
+    assert_equal InSeason::Crop.parse_season('february through mid-march'), [32, 43]
+    assert_equal InSeason::Crop.parse_season('mid-february through mid-march'), [46, 29]
+  end
 end

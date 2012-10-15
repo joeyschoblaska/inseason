@@ -27,12 +27,29 @@ class InSeason
 
       return [periods[season][:start], periods[season][:duration]] if season.split(/ /).size == 1
 
+      season.gsub!(' into ', ' through mid-')
       p1, extent, p2 = season.split(/ /)
-      p1, p2 = periods[p1], periods[p2]
+
+      # for the first period, use modifiers to get the right half of the range
+      if p1.match(/mid-/)
+        p1 = periods[p1.gsub('mid-', '')]
+        p1[:start] += p1[:duration] / 2
+        p1[:duration] = p1[:duration] / 2
+      else
+        p1 = periods[p1]
+      end
+
+      # for the second period, use modifiers to get the left half of the range
+      if p2.match(/mid-/)
+        p2 = periods[p2.gsub('mid-', '')]
+        p2[:duration] = p2[:duration] / 2
+      else
+        p2 = periods[p2]
+      end
+
       p2[:start] += 365 if p2[:start] < p1[:start]
 
-      case extent
-      when 'through', 'and'
+      if %w(through and).include?(extent)
         return[p1[:start], p2[:start] + p2[:duration] - p1[:start]]
       end
 
