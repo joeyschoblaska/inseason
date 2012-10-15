@@ -21,9 +21,21 @@ class CropTest < Test::Unit::TestCase
     assert_equal InSeason::Crop.parse_season('spring through summer'), [79, 186]
   end
 
-  def test_mid_months
+  def test_mid_modifiers
     assert_equal InSeason::Crop.parse_season('mid-february through march'), [46, 45]
     assert_equal InSeason::Crop.parse_season('february through mid-march'), [32, 43]
     assert_equal InSeason::Crop.parse_season('mid-february through mid-march'), [46, 29]
+  end
+
+  def test_late_modifiers
+    assert_equal InSeason::Crop.parse_season('late february through march'), [53, 38]
+    assert_equal InSeason::Crop.parse_season('february through late march'), [32, 51]
+    assert_equal InSeason::Crop.parse_season('late february through late march'), [53, 30]
+  end
+
+  def test_early_modifiers
+    assert_equal InSeason::Crop.parse_season('early february through march'), [39, 52]
+    assert_equal InSeason::Crop.parse_season('february through early march'), [32, 35]
+    assert_equal InSeason::Crop.parse_season('early february through early march'), [39, 28]
   end
 end
