@@ -13,23 +13,23 @@
           %td.name
             MUSHROOMS, leeks
           %td.bar{:style => 'position: relative'}
-            %img.current-line{:src => 'images/current-pixel.png'}
+            = current_pixel
             .season-bar
-              = month_bars
+              %img{:src => 'images/month-bars.png', :class => 'month-bars'}
               .season-bar-inner{:style => "width: 100%"}
         %tr
           %td.name
             TOMATOES
           %td.bar{:style => 'position: relative'}
-            %img.current-line{:src => 'images/current-pixel.png'}
+            = current_pixel
             .season-bar
-              = month_bars
+              %img{:src => 'images/month-bars.png', :class => 'month-bars'}
               .season-bar-inner{:style => "width: 40%;margin-left: 10%"}
         %tr
           %td.name
             APPLES
           %td.bar
-            %img.current-line{:src => 'images/current-pixel.png'}
+            = current_pixel
             .season-bar
-              = month_bars
+              %img{:src => 'images/month-bars.png', :class => 'month-bars'}
               .season-bar-inner{:style => "width: 60%;margin-left: 20%"}

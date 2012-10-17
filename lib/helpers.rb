@@ -1,10 +1,8 @@
 class InSeason
   module Helpers
-    def month_bars
-      width = 500
-      offset = -(width/365.0 * (Time.now.yday - 1) - width/2).to_i
-      "<img class='month-bars' src='images/month-bars.png' style='left: #{offset}px'>" +
-      "<img class='month-bars' src='images/month-bars.png' style='left: #{offset + width}px'>"
+    def current_pixel
+      offset = ((Time.now.yday - 1) / 365.0 * 500).to_i
+      "<img src='images/current-pixel.png' class='current-line' style='left: #{offset}px'>"
     end
   end
 end

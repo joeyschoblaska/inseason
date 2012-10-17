@@ -4902,7 +4902,6 @@ img.current-line {
   height: 100%;
   width: 1px;
   position: absolute;
-  left: 250px;
   z-index: 100;
 }
 img.month-bars {
