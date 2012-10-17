@@ -1,21 +1,23 @@
 apples:
-  - late summer through fall (cold storage until spring)
+  - late summer through fall
 apricots:
   - late spring through early summer
 artichokes:
-  - spring and again early fall
+  - spring
+  - early fall
 arugula:
-  - available year-round but best in spring and fall
+  - spring
+  - fall
 asparagus:
   - spring
 avocados:
-  - classically summer, but now harvested year-round
+  - summer
 basil:
   - summer
 beets:
   - year-round
 belgian endive:
-  - available year-round but best in fall and winter
+  - fall and winter
 blackberrries:
   - summer
 blueberries:
@@ -23,13 +25,13 @@ blueberries:
 boysenberries:
   - early summer
 broccoli:
-  - year-round but best in fall and winter
+  - fall and winter
 broccoli raab:
   - fall through spring
 brussels sprouts:
   - late fall and winter
 cabbage:
-  - best in late fall and winter but available year-round
+  - late fall and winter
 cantaloupes:
   - late summer
 cardoons:
@@ -37,17 +39,17 @@ cardoons:
 carrots:
   - year-round
 cauliflower:
-  - best in fall and winter but available year-round
-celeriac/celery root:
+  - fall and winter
+celeriac / celery root:
   - fall and winter
 celery:
-  - best in fall and winter but available year-round
+  - fall and winter
 chard:
   - summer and fall
 cherries:
   - late spring and summer
-chickpeas (a.k.a. garbanzo beans):
-  - fresh in summer (dried year-round)
+chickpeas:
+  - summer
 chicories:
   - fall and winter
 chiles:
@@ -75,10 +77,10 @@ fiddleheads:
 figs:
   - summer and fall
 garlic:
-  - summer and fall (stored year-round)
+  - summer and fall
 gooseberries:
   - summer
-garlic scapes/green garlic:
+garlic scapes / green garlic:
   - spring
 grapefruit:
   - winter and spring
@@ -92,10 +94,10 @@ horseradish:
   - fall and winter
 huckleberries:
   - late summer and early fall
-jerusalem artichokes/sunchokes:
+jerusalem artichokes / sunchokes:
   - fall and winter
 kale:
-  - best in fall and winter
+  - fall and winter
 kiwis:
   - winter and into spring
 kohlrabi:
@@ -109,7 +111,7 @@ lemongrass:
 lemons:
   - winter and spring
 lettuce:
-  - available year-round nationally but best in spring
+  - spring
 limes:
   - late summer and fall
 mandarins:
@@ -137,15 +139,11 @@ new potatoes:
 okra:
   - late summer and early fall
 onions:
-  - spring through fall (stored in winter)
+  - spring through fall
 oranges (navel):
   - winter and spring
 oranges (valencia):
   - spring and summer
-oregano:
-  - year-round
-parsley:
-  - year-round
 parsnips:
   - fall through spring
 peaches:
@@ -167,7 +165,7 @@ pomegranates:
 pommelos:
   - winter
 potatoes:
-  - late summer through fall but available from storage year-round
+  - late summer through fall
 pumpkins:
   - fall
 quinces:
@@ -176,8 +174,8 @@ radicchio:
   - late summer through early spring
 radishes:
   - spring through fall
-radishes (daikon:
-  - watermelon, other large varieties), fall and winter
+radishes (daikon):
+  - fall and winter
 rapini:
   - fall through spring
 raspberries:
@@ -195,10 +193,10 @@ salsify:
 scallions:
   - spring through fall
 shallots:
-  - summer and fall (from storage through winter)
+  - summer and fall
 shelling beans:
   - summer and early fall
-snap peas/snow peas/pea pods:
+snap peas, snow peas, pea pods:
   - spring
 sorrel:
   - year-round
@@ -214,7 +212,7 @@ stinging nettles:
   - spring
 strawberries:
   - spring and summer
-sunchokes/jerusalem artichokes:
+sunchokes / jerusalem artichokes:
   - fall and winter
 sweet onions:
   - spring and summer
