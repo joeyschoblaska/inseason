@@ -41,7 +41,7 @@ class InSeason
       elsif in_season? && !other.in_season?
         -1
       else
-        1
+        name <=> other.name
       end
     end
 

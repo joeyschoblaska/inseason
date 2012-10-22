@@ -4883,8 +4883,14 @@ body {
   background: url('/images/bg.png');
   color: #42290c;
 }
+h2 {
+  text-align: center;
+}
 table {
   margin: 0 auto;
+}
+table tr {
+  height: 34px;
 }
 table td.name {
   width: 230px;
