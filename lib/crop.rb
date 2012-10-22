@@ -14,6 +14,12 @@ class InSeason
       end
     end
 
+    def year_round?
+      seasons.any? do |season|
+        season[0] == 1 && season[1] == 365
+      end
+    end
+
     def self.load(state)
       yaml = YAML::load(File.open("config/crops/#{state}.yml"))
       yaml.map{|k, v| self.new(:name => k, :seasons => v)}

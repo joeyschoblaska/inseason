@@ -9,7 +9,11 @@
       %h2{:style => 'text-align: center'} What's in Season In Illinois
     %table
       %tbody
-        - @crops.each do |crop|
+        - unless @year_round.empty?
+          %tr.in-season
+            %td.name YEAR-ROUND:
+            %td.bar= @year_round.map{|yr| yr.name}.join(', ')
+        - (@crops - @year_round).each do |crop|
           %tr{:class => crop.in_season? ? 'in-season' : 'out-of-season'}
             %td.name= crop.name
             %td.bar{:style => 'position: relative'}

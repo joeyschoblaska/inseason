@@ -4895,6 +4895,9 @@ table td.name {
   text-transform: uppercase;
 }
 table td.bar {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #775228;
   width: 730px;
   position: relative;
 }
