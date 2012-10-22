@@ -88,9 +88,9 @@ class InSeason
         return[p1[:start], p2[:start] + p2[:duration] - p1[:start]]
       end
 
-      raise "Could not parse season: #{season}"
+      raise 'Could not parse season information'
     rescue Exception => e
-      puts "Could not parse season: #{season}"
+      puts "Error parsing season: #{season}"
       raise e
     end
   end

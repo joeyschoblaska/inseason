@@ -31,7 +31,7 @@ limes:
 luau (taro leaf):
   - year-round
 lychees:
-  - peak may through september but harvested year-round
+  - may through september
 mangoes:
   - march through november
 melons:
@@ -56,10 +56,10 @@ rambutans:
   - october through march
 spinach:
   - year-round
-squash:
-  - summer, june through march
-squash:
-  - winter, june through march
+squash (summer):
+  - june through march
+squash (winter):
+  - june through march
 strawberries:
   - january through april
 starfruit:

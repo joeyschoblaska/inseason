@@ -1,6 +1,16 @@
 require './test/test_helper'
 
 class CropTest < Test::Unit::TestCase
+  # smoke test to ensure that all data is parse-able
+  def test_data
+    Dir.foreach('config/crops/') do |file|
+      next unless file.match(/\w\w\.yml/)
+      InSeason::Crop.load(file.gsub('.yml', ''))
+    end
+
+    assert_equal 1, 1
+  end
+
   def test_parse_season_one_month
     assert_equal InSeason::Crop.parse_season('january'), [1, 31]
   end
