@@ -38,4 +38,9 @@ class CropTest < Test::Unit::TestCase
     assert_equal InSeason::Crop.parse_season('february through early march'), [32, 35]
     assert_equal InSeason::Crop.parse_season('early february through early march'), [39, 28]
   end
+
+  def test_single_partial_period
+    assert_equal InSeason::Crop.parse_season('early january'), [1, 7]
+    assert_equal InSeason::Crop.parse_season('late january'), [24, 7]
+  end
 end

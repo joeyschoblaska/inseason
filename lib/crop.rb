@@ -25,10 +25,22 @@ class InSeason
         'autumn' =>    {:start => 265, :duration => 91}
       }
 
+      # for single periods like "june", "winter"
       return [periods[season][:start], periods[season][:duration]] if season.split(/ /).size == 1
 
       season.gsub!(' into ', ' through mid-')
       p1, extent, p2 = season.split(/(?<!late|early) /)
+
+      # for single periods with a modifier like "early june", "late winter"
+      if p2.nil?
+        if p1.match(/^late /)
+          p = periods[p1.gsub(/^late /, '')]
+          return [p[:start] + (p[:duration] * 0.75).to_i, p[:duration] / 4]
+        elsif p1.match(/^early /)
+          p = periods[p1.gsub(/^early /, '')]
+          return [p[:start], (p[:duration] / 4).to_i]
+        end
+      end
 
       # for the first period, use modifiers to get the right half of the range
       if p1.match(/mid-/)
