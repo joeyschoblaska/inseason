@@ -8,10 +8,7 @@ class InSeason
     end
 
     def in_season?
-      today = (Date.today.leap? && Time.now.yday > 6) ? Time.now.yday - 1 : Time.now.yday
-      seasons.any? do |season|
-        season[0] <= today && today <= (season[0] + season[1] - 1)
-      end
+      !!current_season
     end
 
     def year_round?
@@ -20,9 +17,37 @@ class InSeason
       end
     end
 
+    def current_season
+      today = (Date.today.leap? && Time.now.yday > 6) ? Time.now.yday - 1 : Time.now.yday
+      seasons.find do |season|
+        season[0] <= today && today <= (season[0] + season[1] - 1)
+      end
+    end
+
+    def season_remaining
+      return 0 unless in_season?
+
+      today = (Date.today.leap? && Time.now.yday > 6) ? Time.now.yday - 1 : Time.now.yday
+      current_season[0] + current_season[1] - today
+    end
+
+    def <=>(other)
+      if in_season? && other.in_season?
+        if season_remaining == other.season_remaining
+          name <=> other.name
+        else
+          season_remaining <=> other.season_remaining
+        end
+      elsif in_season? && !other.in_season?
+        -1
+      else
+        1
+      end
+    end
+
     def self.load(state)
       yaml = YAML::load(File.open("config/crops/#{state}.yml"))
-      yaml.map{|k, v| self.new(:name => k, :seasons => v)}
+      yaml.map{|k, v| self.new(:name => k, :seasons => v)}.sort
     end
 
     def self.parse_season(season)
