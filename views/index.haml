@@ -9,27 +9,11 @@
       %h2{:style => 'text-align: center'} What's in Season In Illinois
     %table
       %tbody
-        %tr
-          %td.name
-            MUSHROOMS, leeks
-          %td.bar{:style => 'position: relative'}
-            = current_line
-            .season-bar
-              %img{:src => 'images/month-bars.png', :class => 'month-bars'}
-              .season-bar-inner{:style => "width: 100%"}
-        %tr
-          %td.name
-            TOMATOES
-          %td.bar{:style => 'position: relative'}
-            = current_line
-            .season-bar
-              %img{:src => 'images/month-bars.png', :class => 'month-bars'}
-              .season-bar-inner{:style => "width: 40%;margin-left: 10%"}
-        %tr
-          %td.name
-            APPLES
-          %td.bar
-            = current_line
-            .season-bar
-              %img{:src => 'images/month-bars.png', :class => 'month-bars'}
-              .season-bar-inner{:style => "width: 60%;margin-left: 20%"}
+        - @crops.each do |crop|
+          %tr
+            %td.name= crop.name
+            %td.bar{:style => 'position: relative'}
+              = current_line
+              .season-bar
+                %img{:src => 'images/month-bars.png', :class => 'month-bars'}
+                = season_bars(crop.seasons)
