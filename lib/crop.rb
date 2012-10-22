@@ -7,6 +7,13 @@ class InSeason
       @seasons = options[:seasons].map{|s| InSeason::Crop.parse_season(s)}
     end
 
+    def in_season?
+      today = (Date.today.leap? && Time.now.yday > 6) ? Time.now.yday - 1 : Time.now.yday
+      seasons.any? do |season|
+        season[0] <= today && today <= (season[0] + season[1] - 1)
+      end
+    end
+
     def self.load(state)
       yaml = YAML::load(File.open("config/crops/#{state}.yml"))
       yaml.map{|k, v| self.new(:name => k, :seasons => v)}

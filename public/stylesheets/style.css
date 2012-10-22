@@ -4898,6 +4898,9 @@ table td.bar {
   width: 730px;
   position: relative;
 }
+table tr.in-season td {
+  color: #6d8104;
+}
 img.current-line {
   height: 100%;
   width: 1px;

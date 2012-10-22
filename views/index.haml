@@ -10,7 +10,7 @@
     %table
       %tbody
         - @crops.each do |crop|
-          %tr
+          %tr{:class => crop.in_season? ? 'in-season' : 'out-of-season'}
             %td.name= crop.name
             %td.bar{:style => 'position: relative'}
               = current_line
