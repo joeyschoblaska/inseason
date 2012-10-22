@@ -1,28 +1,37 @@
 class InSeason
   class Crop
-    def self.load(state)
+    attr_accessor :name, :seasons
 
+    def initialize(options = {})
+      @name = options[:name]
+      @seasons = options[:seasons].map{|s| InSeason::Crop.parse_season(s)}
+    end
+
+    def self.load(state)
+      yaml = YAML::load(File.open("config/crops/#{state}.yml"))
+      yaml.map{|k, v| self.new(:name => k, :seasons => v)}
     end
 
     def self.parse_season(season)
       periods = {
-        'january' =>   {:start => 1,   :duration => 31},
-        'february' =>  {:start => 32,  :duration => 28},
-        'march' =>     {:start => 60,  :duration => 31},
-        'april' =>     {:start => 91,  :duration => 30},
-        'may' =>       {:start => 121, :duration => 31},
-        'june' =>      {:start => 152, :duration => 30},
-        'july' =>      {:start => 182, :duration => 31},
-        'august' =>    {:start => 213, :duration => 31},
-        'september' => {:start => 244, :duration => 30},
-        'october' =>   {:start => 274, :duration => 31},
-        'november' =>  {:start => 305, :duration => 30},
-        'december' =>  {:start => 335, :duration => 31},
-        'winter' =>    {:start => 356, :duration => 88},
-        'spring' =>    {:start => 79,  :duration => 93},
-        'summer' =>    {:start => 172, :duration => 93},
-        'fall' =>      {:start => 265, :duration => 91},
-        'autumn' =>    {:start => 265, :duration => 91}
+        'january' =>    {:start => 1,   :duration => 31},
+        'february' =>   {:start => 32,  :duration => 28},
+        'march' =>      {:start => 60,  :duration => 31},
+        'april' =>      {:start => 91,  :duration => 30},
+        'may' =>        {:start => 121, :duration => 31},
+        'june' =>       {:start => 152, :duration => 30},
+        'july' =>       {:start => 182, :duration => 31},
+        'august' =>     {:start => 213, :duration => 31},
+        'september' =>  {:start => 244, :duration => 30},
+        'october' =>    {:start => 274, :duration => 31},
+        'november' =>   {:start => 305, :duration => 30},
+        'december' =>   {:start => 335, :duration => 31},
+        'winter' =>     {:start => 356, :duration => 88},
+        'spring' =>     {:start => 79,  :duration => 93},
+        'summer' =>     {:start => 172, :duration => 93},
+        'fall' =>       {:start => 265, :duration => 91},
+        'autumn' =>     {:start => 265, :duration => 91},
+        'year-round' => {:start => 1, :duration => 365}
       }
 
       # for single periods like "june", "winter"
@@ -80,6 +89,9 @@ class InSeason
       end
 
       raise "Could not parse season: #{season}"
+    rescue Exception => e
+      puts "Could not parse season: #{season}"
+      raise e
     end
   end
 end
