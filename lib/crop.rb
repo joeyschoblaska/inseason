@@ -4,7 +4,8 @@ class InSeason
 
     def initialize(options = {})
       @name = options[:name]
-      @seasons = options[:seasons].map{|s| InSeason::Crop.parse_season(s)}
+      @seasons = options[:seasons].inject([]){|a, s| a += Crop.split_wrapping_season(Crop.parse_season(s))}
+      @seasons.sort_by!{|s| s[0]}
     end
 
     def in_season?
@@ -28,7 +29,12 @@ class InSeason
       return 0 unless in_season?
 
       today = (Date.today.leap? && Time.now.yday > 6) ? Time.now.yday - 1 : Time.now.yday
-      current_season[0] + current_season[1] - today
+
+      if current_season[0] + current_season[1] >= 366 && seasons.any?{|s| s[0] == 1}
+        current_season[0] + current_season[1] - today + seasons.find{|s| s[0] == 1}[1]
+      else
+        current_season[0] + current_season[1] - today
+      end
     end
 
     def <=>(other)
@@ -130,6 +136,17 @@ class InSeason
     rescue Exception => e
       puts "Error parsing season: #{season}"
       raise e
+    end
+
+    def self.split_wrapping_season(season)
+      if season[0] + season[1] > 366
+        [
+          [1, season[0] + season[1] - 366],
+          [season[0], 366 - season[0]]
+        ]
+      else
+        [season]
+      end
     end
   end
 end

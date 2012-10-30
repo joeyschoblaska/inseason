@@ -5,3 +5,4 @@ Bundler.require
 
 require './inseason'
 require 'test/unit'
+require 'mocha'
