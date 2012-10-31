@@ -44,6 +44,8 @@ class InSeason
         else
           season_remaining <=> other.season_remaining
         end
+      elsif !in_season? && other.in_season?
+        1
       elsif in_season? && !other.in_season?
         -1
       else
