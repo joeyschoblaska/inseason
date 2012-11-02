@@ -4918,7 +4918,7 @@ img.month-bars {
 }
 .season-bar {
   width: 500px;
-  margin: 10px 0;
+  margin: 5px 0;
   overflow: hidden;
   position: relative;
   height: 20px;
