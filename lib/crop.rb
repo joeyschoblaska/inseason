@@ -19,21 +19,18 @@ class InSeason
     end
 
     def current_season
-      today = (Date.today.leap? && Time.now.yday > 6) ? Time.now.yday - 1 : Time.now.yday
       seasons.find do |season|
-        season[0] <= today && today <= (season[0] + season[1] - 1)
+        season[0] <= InSeason.today && InSeason.today <= (season[0] + season[1] - 1)
       end
     end
 
     def season_remaining
       return 0 unless in_season?
 
-      today = (Date.today.leap? && Time.now.yday > 6) ? Time.now.yday - 1 : Time.now.yday
-
       if current_season[0] + current_season[1] >= 366 && seasons.any?{|s| s[0] == 1}
-        current_season[0] + current_season[1] - today + seasons.find{|s| s[0] == 1}[1]
+        current_season[0] + current_season[1] - InSeason.today + seasons.find{|s| s[0] == 1}[1]
       else
-        current_season[0] + current_season[1] - today
+        current_season[0] + current_season[1] - InSeason.today
       end
     end
 
