@@ -4883,8 +4883,23 @@ body {
   background: url('/images/bg.png');
   color: #42290c;
 }
-h2 {
+.header-image {
+  padding: 10px 0;
   text-align: center;
+}
+.controls {
+  width: 500px;
+  margin-left: 225px;
+}
+.controls form#controls {
+  margin: 0;
+}
+.controls form#controls .state-selector {
+  width: 75px;
+}
+.controls form#controls .search {
+  float: right;
+  width: 100px;
 }
 table {
   margin: 0 auto;
