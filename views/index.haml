@@ -38,9 +38,8 @@
           %tr{'data-crop' => crop.name}
             %td.name= crop.name
             %td.bar{:style => 'position: relative'}
-              = current_line
               .season-bar
-                %img{:src => 'images/month-bars.png', :class => 'month-bars'}
+                %img.month-bars{:src => 'images/month-bars.png'}
                 = season_bars(crop)
     .footer-container
       .footer

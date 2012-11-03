@@ -1,10 +1,5 @@
 class InSeason
   module Helpers
-    def current_line
-      offset = (InSeason.today / 365.0 * 500).to_i + 1
-      "<img src='images/current-pixel.png' class='current-line' style='left: #{offset}px'>"
-    end
-
     def season_bars(crop)
       seasons = crop.seasons.sort_by{|s| s[0]}
       seasons.map do |season|
