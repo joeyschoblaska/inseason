@@ -4937,6 +4937,7 @@ img.month-bars {
   opacity: 0.25;
   filter: alpha(opacity=25);
   top: 4px;
+  left: 0;
 }
 .season-bar {
   width: 500px;
