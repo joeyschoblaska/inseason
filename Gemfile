@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'capistrano'
 gem 'coffee-script'
 gem 'haml'
 gem 'less'
