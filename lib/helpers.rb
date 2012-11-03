@@ -5,8 +5,8 @@ class InSeason
       "<img src='images/current-pixel.png' class='current-line' style='left: #{offset}px'>"
     end
 
-    def season_bars(seasons)
-      seasons = seasons.sort_by{|s| s[0]}
+    def season_bars(crop)
+      seasons = crop.seasons.sort_by{|s| s[0]}
       seasons.map do |season|
         if season == seasons.first
           padding = (season[0] / 365.0 * 500).to_i
@@ -17,7 +17,7 @@ class InSeason
 
         width = (season[1] / 365.0 * 500).to_i
 
-        "<div class='season-bar-inner' style='width: #{width}px; margin-left: #{padding}px'></div>"
+        "<div class='season-bar-inner#{' in-season' if crop.current_season == season}' style='width: #{width}px; margin-left: #{padding}px'></div>"
       end.join
     end
   end
