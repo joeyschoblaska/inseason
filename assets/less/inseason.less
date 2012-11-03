@@ -5,6 +5,10 @@ body {
   color: #42290c;
 }
 
+.clear {
+  clear: both;
+}
+
 .header-image {
   padding: 10px 0;
   text-align: center;
@@ -70,7 +74,7 @@ img.month-bars {
   overflow: hidden;
   position: relative;
   height: @baseLineHeight;
-  background: url('/images/bg-dark.png');
+  background: url('/images/bg-med.png');
   .box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
   .border-radius(4px);
 }
@@ -87,3 +91,18 @@ img.month-bars {
 .season-bar-inner.in-season {
   #gradient > .striped(#9dc733);
 }
+
+.footer-container {
+  padding: 75px 0 25px 0;
+
+  .footer {
+    width: 500px;
+    margin: 0 auto;
+
+    img.headshot {
+      float: left;
+      margin: 0 20px 20px 0;
+    }
+  }
+}
+
