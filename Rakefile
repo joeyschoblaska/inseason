@@ -8,6 +8,7 @@ end
 
 namespace 'assets' do
   task 'compile' do
-    `lessc less/style.less > public/stylesheets/style.css`
+    `lessc assets/less/inseason.less > public/stylesheets/inseason.css`
+    `coffee -c -o public/javascripts/ assets/coffee/inseason.coffee `
   end
 end

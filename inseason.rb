@@ -10,7 +10,7 @@ class InSeason < Sinatra::Base
   end
 
   get '/:state' do |s|
-    @state = s
+    @state = s.downcase
     @crops = Crop.load(@state)
     @year_round = @crops.select{|c| c.year_round?}
     haml :index, :format => :html5

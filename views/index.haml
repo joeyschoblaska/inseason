@@ -2,8 +2,9 @@
 %html
   %head
     %title= "What Foods Are In Season In #{states[@state]}?"
-    %link{:rel => 'stylesheet', :href => '/stylesheets/style.css', :type => 'text/css'}
+    %link{:rel => 'stylesheet', :href => '/stylesheets/inseason.css', :type => 'text/css'}
     %script{:src => 'javascripts/jquery-1.8.2.min.js'}
+    %script{:src => 'javascripts/inseason.js'}
   %body
     %a{:href => 'https://github.com/joeyschoblaska/inseason'}
       %img{:style => 'position: absolute; top: 0; right: 0; border: 0;', :src => "https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png", :alt => "Fork me on GitHub"}
@@ -21,7 +22,7 @@
         - unless @year_round.empty?
           %tr.in-season
             %td.name YEAR-ROUND:
-            %td.bar= @year_round.map{|yr| yr.name}.join(', ')
+            %td.bar.year-round= @year_round.map{|yr| yr.name}.join(', ')
         - (@crops - @year_round).each do |crop|
           %tr
             %td.name= crop.name

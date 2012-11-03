@@ -4919,6 +4919,10 @@ table td.bar {
   width: 730px;
   position: relative;
 }
+table td.year-round {
+  width: 500px;
+  padding: 20px 230px 20px 0;
+}
 img.current-line {
   height: 100%;
   width: 1px;
