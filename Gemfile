@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'coffee-script'
 gem 'haml'
 gem 'less'
+gem 'pry'
 gem 'sinatra'
 gem 'therubyracer'
-gem 'pry'
 
 group :development, :test do
   gem 'mocha'
