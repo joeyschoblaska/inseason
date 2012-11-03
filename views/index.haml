@@ -20,11 +20,11 @@
     %table
       %tbody
         - unless @year_round.empty?
-          %tr.in-season
+          %tr.year-round{'data-crop' => @year_round.map{|yr| yr.name}.join(', ')}
             %td.name YEAR-ROUND:
-            %td.bar.year-round= @year_round.map{|yr| yr.name}.join(', ')
+            %td.bar= @year_round.map{|yr| yr.name}.join(', ')
         - (@crops - @year_round).each do |crop|
-          %tr
+          %tr{'data-crop' => crop.name}
             %td.name= crop.name
             %td.bar{:style => 'position: relative'}
               = current_line

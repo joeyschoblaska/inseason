@@ -2,8 +2,17 @@
 (function() {
 
   $(function() {
-    return $('.state-selector').change(function() {
+    $('.state-selector').change(function() {
       return window.location = '/' + $('.state-selector').val().toLowerCase();
+    });
+    return $('.search').keyup(function() {
+      return $('tr').each(function() {
+        if ($(this).data('crop').match($('.search').val().toLowerCase())) {
+          return $(this).show();
+        } else {
+          return $(this).hide();
+        }
+      });
     });
   });
 

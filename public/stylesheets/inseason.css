@@ -4919,7 +4919,7 @@ table td.bar {
   width: 730px;
   position: relative;
 }
-table td.year-round {
+table tr.year-round td.bar {
   width: 500px;
   padding: 20px 230px 20px 0;
 }
