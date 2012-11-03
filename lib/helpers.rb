@@ -20,5 +20,14 @@ class InSeason
         "<div class='season-bar-inner#{' in-season' if crop.current_season == season}' style='width: #{width}px; margin-left: #{padding}px'></div>"
       end.join
     end
+
+    def states
+      {
+        'ca' => 'California',
+        'il' => 'Illinois',
+        'ny' => 'New York',
+        'wi' => 'Wisconsin'
+      }
+    end
   end
 end
