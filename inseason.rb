@@ -6,6 +6,11 @@ class InSeason < Sinatra::Base
 
   get '/' do
     @state = 'il'
+    redirect to("/#{@state}")
+  end
+
+  get '/:state' do |s|
+    @state = s
     @crops = Crop.load(@state)
     @year_round = @crops.select{|c| c.year_round?}
     haml :index, :format => :html5
