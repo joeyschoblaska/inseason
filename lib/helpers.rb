@@ -47,5 +47,10 @@ class InSeason
         'wi' => 'Wisconsin'
       }
     end
+
+    def partial(template, options = {})
+      options[:layout] = false
+      haml(template, options)
+    end
   end
 end

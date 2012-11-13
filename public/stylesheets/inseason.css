@@ -4905,7 +4905,7 @@ body {
   width: 100px;
 }
 table {
-  margin: 0 auto;
+  margin: 0 auto 25px auto;
 }
 table td.name {
   width: 220px;
@@ -4922,9 +4922,12 @@ table td.bar {
   width: 730px;
   position: relative;
 }
-table tr.year-round td.bar {
+table.year-round {
+  margin: 25px auto 25px auto;
+}
+table.year-round td.bar {
   width: 500px;
-  padding: 20px 230px 20px 0;
+  padding: 0 230px 0 0;
 }
 img.current-line {
   height: 100%;

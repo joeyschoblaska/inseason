@@ -1,0 +1,10 @@
+- unless crops.empty?
+  %table
+    %tbody
+      - crops.each do |crop|
+        %tr{'data-crop' => crop.name}
+          %td.name= crop.name
+          %td.bar{:style => 'position: relative'}
+            .season-bar
+              %img.month-bars{:src => 'images/month-bars.png'}
+              = season_bars(crop)

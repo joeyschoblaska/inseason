@@ -11,8 +11,10 @@ class InSeason < Sinatra::Base
 
   get '/:state' do |s|
     @state = s.downcase
-    @crops = Crop.load(@state)
-    @year_round = @crops.select{|c| c.year_round?}
+    crops = Crop.load(@state)
+    @year_round = crops.select{|c| c.year_round?}
+    @in_season = crops.select{|c| c.in_season? && !c.year_round?}
+    @out_of_season = crops.select{|c| !c.in_season?}
     haml :index, :format => :html5
   end
 

@@ -28,19 +28,17 @@
           %select.state-selector
             - states.keys.each do |state|
               %option{:selected => state == @state ? 'selected' : nil}= state.upcase
-    %table
-      %tbody
-        - unless @year_round.empty?
-          %tr.year-round{'data-crop' => @year_round.map{|yr| yr.name}.join(', ')}
+
+    - unless @year_round.empty?
+      %table.year-round
+        %tbody
+          %tr{'data-crop' => @year_round.map{|yr| yr.name}.join(', ')}
             %td.name YEAR-ROUND:
             %td.bar= @year_round.map{|yr| yr.name}.join(', ')
-        - (@crops - @year_round).each do |crop|
-          %tr{'data-crop' => crop.name}
-            %td.name= crop.name
-            %td.bar{:style => 'position: relative'}
-              .season-bar
-                %img.month-bars{:src => 'images/month-bars.png'}
-                = season_bars(crop)
+
+    = partial :crop_table, :locals => {:crops => @in_season}
+    = partial :crop_table, :locals => {:crops => @out_of_season}
+
     .footer-container
       .footer
         %img.headshot{:src => 'images/headshot.png'}
