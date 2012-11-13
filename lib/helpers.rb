@@ -22,8 +22,27 @@ class InSeason
 
     def states
       {
+        'ak' => 'Alaska',
+        'al' => 'Alabama',
+        'ar' => 'Arkansas',
+        'az' => 'Arizona',
         'ca' => 'California',
+        'co' => 'Colorado',
+        'ct' => 'Connecticut',
+        'de' => 'Delaware',
+        'fl' => 'Florida',
+        'ga' => 'Georgia',
+        'hi' => 'Hawaii',
+        'ia' => 'Iowa',
+        'id' => 'Idaho',
         'il' => 'Illinois',
+        'in' => 'Indiana',
+        'ks' => 'Kansas',
+        'ky' => 'Kentucky',
+        'la' => 'Louisiana',
+        'ma' => 'Massachusetts',
+        'md' => 'Maryland',
+        'me' => 'Maine',
         'ny' => 'New York',
         'wi' => 'Wisconsin'
       }
