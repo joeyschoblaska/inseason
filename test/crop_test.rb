@@ -78,13 +78,4 @@ class CropTest < Test::Unit::TestCase
 
     assert_equal 81, crop.season_remaining
   end
-
-  def test_time_out_of_season
-    late_crop = InSeason::Crop.new(:name => 'athelas', :seasons => ['january'])
-    early_crop = InSeason::Crop.new(:name => 'kingsfoil', :seasons => ['march'])
-    Time.stubs(:now).returns(Time.parse('February 15, 2013'))
-
-    assert_equal 15, late_crop.time_out_of_season
-    assert_equal 13, early_crop.time_out_of_season
-  end
 end
