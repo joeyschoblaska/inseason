@@ -5,8 +5,7 @@ class InSeason < Sinatra::Base
   helpers InSeason::Helpers
 
   get '/' do
-    @state = 'il'
-    redirect to("/#{@state}")
+    redirect to(states.keys.include?(geocoded_state) ? geocoded_state : 'il')
   end
 
   get '/:state' do |s|

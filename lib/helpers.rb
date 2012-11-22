@@ -1,5 +1,11 @@
 class InSeason
   module Helpers
+    def geocoded_state
+      return @geocoded_state if @geocoded_state
+      state = Geokit::Geocoders::IpGeocoder.geocode(request.ip).state
+      @geocoded_state = state ? state.downcase : nil
+    end
+
     def season_bars(crop)
       seasons = crop.seasons.sort_by{|s| s[0]}
       seasons.map do |season|

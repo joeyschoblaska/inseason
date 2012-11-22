@@ -17,6 +17,8 @@ GEM
     eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    geokit (1.6.5)
+      multi_json
     haml (3.1.7)
     highline (1.6.15)
     less (2.2.2)
@@ -63,6 +65,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   coffee-script
+  geokit
   haml
   less
   mocha
