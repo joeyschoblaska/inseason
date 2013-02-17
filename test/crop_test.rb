@@ -74,8 +74,8 @@ class CropTest < Test::Unit::TestCase
 
   def test_season_remaining_with_wrapping_periods
     crop = InSeason::Crop.new(:name => 'athelas', :seasons => ['winter', 'summer'])
-    Time.stubs(:now).returns(Time.parse('December 30, 2013'))
+    Time.stubs(:now).returns(Time.parse('December 25, 2013'))
 
-    assert_equal 81, crop.season_remaining
+    assert_equal 85, crop.season_remaining
   end
 end
