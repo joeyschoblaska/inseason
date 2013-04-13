@@ -3,13 +3,15 @@ class InSeason < Sinatra::Base
   require './lib/crop'
 
   helpers InSeason::Helpers
+  helpers Sinatra::Cookies
 
   get '/' do
-    redirect to(states.keys.include?(geocoded_state) ? geocoded_state : 'il')
+    redirect to(default_state)
   end
 
   get '/:state' do |s|
     @state = s.downcase
+    cookies[:state] = @state
     crops = Crop.load(@state)
     @year_round = crops.select{|c| c.year_round?}
     @in_season = crops.select{|c| c.in_season? && !c.year_round?}

@@ -7,6 +7,7 @@ gem 'haml'
 gem 'less'
 gem 'pry'
 gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'therubyracer'
 
 group :development, :test do
