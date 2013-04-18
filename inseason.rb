@@ -5,6 +5,10 @@ class InSeason < Sinatra::Base
   helpers InSeason::Helpers
   helpers Sinatra::Cookies
 
+  set(:cookie_options) do
+    {:expires => Time.now + 3600*24*365}
+  end
+
   get '/' do
     redirect to(default_state)
   end
