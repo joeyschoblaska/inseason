@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+require 'capistrano-unicorn'
 
 set :application, 'inseason'
 set :repository,  'git@github.com:joeyschoblaska/inseason'
@@ -11,12 +12,4 @@ ssh_options[:forward_agent] = true
 role :web, 'deploy@whatfoodsareinseason.com'
 role :app, 'deploy@whatfoodsareinseason.com'
 
-namespace :deploy do
-  task :start, :roles => :web do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-
-  task :restart, :roles => :web do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-end
+after 'deploy:restart', 'unicorn:reload'
