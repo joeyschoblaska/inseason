@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'capistrano'
-gem 'capistrano-unicorn'
 gem 'coffee-script'
 gem 'geokit'
 gem 'haml'
@@ -10,7 +8,6 @@ gem 'pry'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'therubyracer'
-gem 'unicorn'
 
 group :development, :test do
   gem 'mocha'
