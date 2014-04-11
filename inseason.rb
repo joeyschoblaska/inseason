@@ -13,6 +13,10 @@ class InSeason < Sinatra::Base
     redirect to(default_state)
   end
 
+  get '/favicon.ico' do
+    404
+  end
+
   get '/:state' do |s|
     @state = s.downcase
     cookies[:state] = @state
