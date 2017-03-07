@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'coffee-script'
-gem 'geokit'
 gem 'haml'
 gem 'less'
 gem 'pry'
@@ -11,7 +10,5 @@ gem 'therubyracer'
 
 group :development, :test do
   gem 'mocha'
-  gem 'shotgun'
   gem 'test-unit'
-  gem 'thin'
 end

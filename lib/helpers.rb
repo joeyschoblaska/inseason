@@ -5,17 +5,9 @@ class InSeason
     def default_state
       if states.keys.include?(cookies[:state])
         cookies[:state]
-      elsif states.keys.include?(geocoded_state)
-        geocoded_state
       else
         'il'
       end
-    end
-
-    def geocoded_state
-      return @geocoded_state if @geocoded_state
-      state = Geokit::Geocoders::IpGeocoder.geocode(request.ip).state
-      @geocoded_state = state ? state.downcase : nil
     end
 
     def season_bars(crop)
