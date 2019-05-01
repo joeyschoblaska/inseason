@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "~> 2.5"
 
 gem 'coffee-script'
 gem 'haml'
